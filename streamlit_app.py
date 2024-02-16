@@ -54,9 +54,11 @@ def app():
         clf = GaussianNB()
         
     if st.button('Start'):
+        
         df = pd.read_csv('data_decision_trees.csv', header=None)
         # st.dataframe(df, use_container_width=True)  
         
+        st.subheader('The Dataset')
         # display the dataset
         st.dataframe(df, use_container_width=True)  
 
@@ -70,12 +72,13 @@ def app():
         
         clf.fit(X_train,y_train)
         y_test_pred = clf.predict(X_test)
-        
+        st.subheader('Confusion Matrix')
         st.write('Confusion Matrix')
         cm = confusion_matrix(y_test, y_test_pred)
         st.text(cm)
-        
+        st.subheader('Performance Metrics')
         st.text(classification_report(y_test, y_test_pred))
+        st.subheader('VIsualization')
         visualize_classifier(clf, X, y)
 
 def visualize_classifier(classifier, X, y, title=''):
