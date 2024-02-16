@@ -26,20 +26,19 @@ def app():
     text = """Weaknesses: \nOverfitting potential: Can overfit the training data when 
     dealing with high dimensionality 
     or small datasets."""
+    st.write(text)
 
-    st.text(text)
-
-    st.text('Naive Bayes')
+    st.write('Naive Bayes')
     text = """Strengths: \nEfficient: Works well with high-dimensional datasets 
     due to its simplicity. 
     Fast training: Requires less training time compared to logistic regression. 
     Interpretable: Easy to understand the contribution of each feature to the prediction."""
-    st.text(text)
+    st.write(text)
 
     text = """Weaknesses:\nIndependence assumption: Relies on the strong 
     assumption of feature independence, which can be violated in overlapping clusters, 
     leading to inaccurate predictions."""
-    st.text(text)
+    st.write(text)
 
     # Create the logistic regression 
     clf = GaussianNB() 
