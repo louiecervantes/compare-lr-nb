@@ -18,6 +18,19 @@ def app():
     st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
     st.write('We test the Logistic Regression and Naive Bayes classifiers on the same dataset.')
 
+    # Create the logistic regression 
+    clf = GaussianNB() 
+    options = ['Naive Bayes', 'Logistic Regression']
+    selected_option = st.selectbox('Select the classifier', options)
+    if selected_option=='Logistic Regression':
+        clf = LogisticRegression(C=1.0, class_weight=None, 
+            dual=False, fit_intercept=True,
+            intercept_scaling=1, max_iter=100, multi_class='auto',
+            n_jobs=1, penalty='l2', random_state=42, solver='lbfgs',
+            tol=0.0001, verbose=0, warm_start=False)
+    else:
+        clf = GaussianNB()
+        
     if st.button('Start'):
         df = pd.read_csv('data_decision_trees.csv', header=None)
         # st.dataframe(df, use_container_width=True)  
@@ -32,19 +45,6 @@ def app():
         # Split the dataset into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, \
             test_size=0.2, random_state=42)
-        # Create the logistic regression 
-        clf = GaussianNB()
-        
-        options = ['Naive Bayes', 'Logistic Regression']
-        selected_option = st.selectbox('Select the classifier', options)
-        if selected_option=='Logistic Regression':
-            clf = LogisticRegression(C=1.0, class_weight=None, 
-                dual=False, fit_intercept=True,
-                intercept_scaling=1, max_iter=100, multi_class='auto',
-                n_jobs=1, penalty='l2', random_state=42, solver='lbfgs',
-                tol=0.0001, verbose=0, warm_start=False)
-        else:
-            clf = GaussianNB()
         
         clf.fit(X_train,y_train)
         y_test_pred = clf.predict(X_test)
