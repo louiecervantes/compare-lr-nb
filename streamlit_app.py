@@ -48,7 +48,8 @@ def app():
         
         clf.fit(X_train,y_train)
         y_test_pred = clf.predict(X_test)
-
+        
+        st.write('Confusion Matrix')
         cm = confusion_matrix(y_test, y_test_pred)
         st.text(cm)
         
