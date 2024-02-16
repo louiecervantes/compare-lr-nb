@@ -17,12 +17,12 @@ def app():
     st.title('Compare Linear Regression and Naive Bayes Classifiers')
     st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
  
-    st.text('Logistic Regression:')
+    st.write('Logistic Regression:')
     text = """Strengths: \nMore flexible: Can capture complex relationships between 
     features and classes, even when they are non-linear. No strong independence assumption: 
     Doesn't rely on the assumption that features are independent, which can be 
     helpful for overlapping clusters."""
-    st.text(text)
+    st.write(text)
     text = """Weaknesses: \nOverfitting potential: Can overfit the training data when 
     dealing with high dimensionality 
     or small datasets."""
