@@ -34,7 +34,7 @@ def app():
     due to its simplicity. \nFast training: Requires less training time compared to 
     logistic regression. \nInterpretable: Easy to understand the contribution of each 
     feature to the prediction."""
-    st.write(text)
+    st.text(text)
 
     text = """Weaknesses:\nIndependence assumption: Relies on the strong assumption of feature
     independence, which can be violated in overlapping clusters, leading
