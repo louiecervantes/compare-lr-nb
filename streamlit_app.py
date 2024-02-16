@@ -18,22 +18,23 @@ def app():
     st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
  
     st.text('Logistic Regression:')
-    text = """Strengths: \nMore flexible: Can capture complex relationships between features and classes, even when they are non-linear. No strong independence assumption: Doesn't rely on the assumption that features are independent, which can be helpful for overlapping clusters."""
+    text = """Strengths: \nMore flexible: Can capture complex relationships between features and classes, 
+    even when they are non-linear. No strong independence assumption: Doesn't rely on the assumption 
+    that features are independent, which can be helpful for overlapping clusters."""
     st.text(text)
-    text = """Weaknesses: \nOverfitting potential: Can overfit the training data when dealing with high dimensionality or small datasets."""
+    text = """Weaknesses: \nOverfitting potential: Can overfit the training data when dealing with high dimensionality 
+    or small datasets."""
 
     st.text(text)
 
     st.text('Naive Bayes')
-    text = """Strengths: \nEfficient: Works well with high-dimensional datasets 
-    due to its simplicity. \nFast training: Requires less training time compared to 
-    logistic regression. \nInterpretable: Easy to understand the contribution of each 
-    feature to the prediction."""
+    text = """Strengths: \nEfficient: Works well with high-dimensional datasets due to its simplicity. 
+    Fast training: Requires less training time compared to logistic regression. 
+    Interpretable: Easy to understand the contribution of each feature to the prediction."""
     st.text(text)
 
     text = """Weaknesses:\nIndependence assumption: Relies on the strong assumption of feature
-    independence, which can be violated in overlapping clusters, leading
-    to inaccurate predictions."""
+    independence, which can be violated in overlapping clusters, leading to inaccurate predictions."""
     st.text(text)
 
     # Create the logistic regression 
